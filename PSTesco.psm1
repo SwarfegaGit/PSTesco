@@ -1,13 +1,17 @@
 ﻿function Find-TescoGrocery
 <#
 .Synopsis
-   Short description
+   Search the Tesco grocery website
 .DESCRIPTION
-   Long description
+   Search the Tesco grocery website using the tescolabs.com developer API.  You must sign up for an account and generate your own personal API
+   key in order to use this cmdlet.
 .EXAMPLE
-   Example of how to use this cmdlet
+   Get-TescoGrocery -ApiKey 123456789 -Query beef
+   Search the grocery site for beef
 .EXAMPLE
-   Another example of how to use this cmdlet
+   Get-TescoGrocery -ApiKey 123456789 -Query 'white wine', 'russian standard vodka' -Limit 20
+   Search the grocery site for two items.  These items are enclosed in single quotes as they contain a space between words.  The results 
+   are limited to a maximum of 20 listings.
 #>
 {
     [CmdletBinding()]
@@ -39,7 +43,7 @@
         Try {
             ForEach ($Q in $Query) {
                 $Product = Invoke-RestMethod -Uri "https://dev.tescolabs.com/grocery/products/?query=$Q&offset=$Offset&limit=$Limit" -Headers $Header -ErrorAction Stop
-                $Product.uk.ghs.products.results | ForEach {
+                $Product.uk.ghs.products.results | ForEach-Object {
                     [PSCustomObject]@{
                         PSTypeName = 'XV5.AJP.TescoGrocery'
                         Image = $PSItem.image
