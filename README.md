@@ -8,5 +8,6 @@ You need to provide your own API key in order to use this.  You can sign up for 
 
 Usage
 =====
-
-    Find-TescoGrocery -ApiKey 123456789 -Query 'search term'
+```powershell
+Find-TescoGrocery -ApiKey 123456789 -Query 'search term'
+```
