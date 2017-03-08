@@ -11,3 +11,9 @@ Usage
 ```powershell
 Find-TescoGrocery -ApiKey 123456789 -Query 'search term'
 ```
+Search the grocery site for beef
+
+```powershell
+Get-TescoGrocery -ApiKey 123456789 -Query 'white wine', 'russian standard vodka' -Limit 20
+```
+Search the grocery site for two items.  These items are enclosed in single quotes as they contain a space between words.  The results are limited to a maximum of 20 listings.
