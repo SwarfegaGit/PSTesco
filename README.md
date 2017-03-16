@@ -4,7 +4,7 @@ PSTesco is a simple PowerShell module to search for Tesco groceries using the Te
 Requirements
 ============
 
-You need to provide your own API key in order to use this.  You can sign up for this on the Tesco Labs site.
+You **need** to provide your own API key in order to use this.  You can sign up for this on the Tesco Labs site.
 
 Installation (v5+)
 ============
