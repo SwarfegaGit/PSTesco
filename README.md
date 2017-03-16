@@ -6,6 +6,16 @@ Requirements
 
 You need to provide your own API key in order to use this.  You can sign up for this on the Tesco Labs site.
 
+Installation (v5+)
+============
+```powershell
+Install-Module PSTesco
+```
+If you haven't already you will need to change your execution policy (Get-ExecutionPolicy) to RemoteSigned or less security.
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
 Usage
 =====
 ```powershell
